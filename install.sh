@@ -1,2 +1,2 @@
 ln -sv ~/Documents/dotfiles/.vimrc ~
-ln -sv ~/Documents/dotfiles/.oh-my-zsh/ ~
+ln -sv ~/Documents/dotfiles/.zshrc ~

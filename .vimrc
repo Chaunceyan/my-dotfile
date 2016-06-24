@@ -18,7 +18,7 @@ Plugin 'tpope/vim-fugitive'
 " Super Search
 Plugin 'kien/ctrlp.vim'
 " Nerd tree
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " Color scheme
 Plugin 'flazz/vim-colorschemes'
 " Method folding plugin
@@ -41,11 +41,22 @@ set splitright
 syntax on
 let python_highlight_all=1
 colorscheme molokai
+" Synatstic error checking
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 " Split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" Nerd tree remap
+map <C-n> :NERDTreeToggle<CR>
 " Enable folding with spacebar
 set foldmethod=indent
 set foldlevel=99
@@ -53,7 +64,7 @@ nnoremap <space> za
 " Simply fold config
 let g:SimplyFold_docstring_preview=1
 set tabstop=4
-set autoindent
+set smartindent
 set encoding=utf-8
 set laststatus=2 " For powerline to show up
 set nu " Line number
@@ -72,4 +83,6 @@ au BufNewFile, BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
+" Define BadWhitespace before using in a match
+highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
