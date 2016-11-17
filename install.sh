@@ -50,6 +50,10 @@ if [[ `uname` == 'Darwin' ]]; then
   git clone https://github.com/powerline/fonts
   sh ./fonts/install.sh
   rm -rf fonts
+  
+  # Install YcmCompleter
+  brew install cmake
+  cd ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
 
 else
   # Linux
