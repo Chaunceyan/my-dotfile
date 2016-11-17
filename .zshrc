@@ -85,3 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Syntax Highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+prompt_context() {
+	if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+		prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+	fi
+}
