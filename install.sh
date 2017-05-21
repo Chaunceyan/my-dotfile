@@ -84,15 +84,14 @@ else
 		sh -c \
 		"$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-		git clone https://github.com/zsh-users/zsh-syntaxhihighlighting.git \
-		${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-		git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
 	else
 		echo "ZSH is intalled!"
 	fi
 
+		git clone https://github.com/zsh-users/zsh-syntaxhihighlighting.git \
+		${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+		git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 	# Install Vundle
 	if ls ~/.vim/bundle/Vundle.vim; then
 
@@ -106,6 +105,7 @@ else
 		# Install YCM
 		apt-get install -y build-essential cmake
 		apt-get install -y python-dev python3-dev
+		apt-get install -y python-pip python-dev
 		cd ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
 
 	fi
