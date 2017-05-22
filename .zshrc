@@ -59,6 +59,8 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export PIP_REQUIRE_VIRTUALENV=true
 
 source $ZSH/oh-my-zsh.sh
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

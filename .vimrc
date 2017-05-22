@@ -40,7 +40,7 @@ set splitright
 " Syntastic Highlighting
 syntax on
 let python_highlight_all=1
-colorscheme molokai
+colorscheme solarized
 " Synatstic error checking
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
